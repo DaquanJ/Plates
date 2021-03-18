@@ -13,7 +13,7 @@ libraries - React.js, Springboot /
 database - postgreSQL
 
 ## problem statement
-An e-commerce application that offers local customers the opportunity to buy food dishes from a wide selection , all those who are busy day to day and are in need of a quick, quality meal will enjoy the opportunity to log on and purchase a hot plate with speedy delivery.
+An online catering service that offers local customers the opportunity to buy food dishes from a wide selection , all those who are busy day to day and are in need of a quick, quality meal will enjoy the opportunity to log on and purchase a hot plate with speedy delivery.
 
 ## target users
 The target users are people who are typically to busy to cook a meal, whether for themselves or for their families. This application is for people who despite being busy, still have a passion for top notch meals.
