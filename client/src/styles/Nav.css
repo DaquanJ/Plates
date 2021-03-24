@@ -1,3 +1,23 @@
 .navigation {
-    border: 2px solid black;
+    border-right: 2px solid black;
+    width: 15%;
+}
+
+.navigation ul {
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+
+}
+
+
+.navigation h2 {
+    color: rgba(191, 191, 191, 0.7);
+}
+
+
+.navigation li {
+    font-weight: bold;
+    list-style: none;
+    padding: 1%;
+    color: gray;
 }
