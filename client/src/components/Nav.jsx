@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import '../styles/Nav.css';
 
@@ -8,8 +9,8 @@ const Nav = () => {
 
             <h2>Plates</h2>
             <ul>
-                <li>Browse</li>
-                <li>Cart</li>
+                <Link to='/browse'> <li>Browse</li> </Link>
+                <Link to='/cart'> <li>Cart</li> </Link>
             </ul>
 
             <h2>My Plates</h2>
