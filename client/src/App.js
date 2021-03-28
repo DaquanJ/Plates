@@ -4,6 +4,7 @@ import Nav from './components/Nav';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Browse from './components/Browse';
 import Cart from './components/Cart';
+import Search from './components/Search';
 
 function App() {
   return (
@@ -13,6 +14,8 @@ function App() {
         <Switch>
           <Route path='/browse' component={Browse} />
           <Route path='/cart' component={Cart} />
+          <Route path='/search' component={Search} />
+
         </Switch>
       </Router>
     </div>
