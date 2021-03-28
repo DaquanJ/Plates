@@ -2,10 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import '../styles/Nav.css';
+import Search from './Search';
 
 const Nav = () => {
     return (
         <div className="navigation" >
+            <Link to='/search'> <Search /> </Link>
 
             <h2>Plates</h2>
             <ul>
