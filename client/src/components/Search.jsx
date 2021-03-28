@@ -10,7 +10,8 @@ const Search = () => {
     const [food, setFood] = useState([]);
     const [search, setSearch] = useState({});
 
-    async function getFood() {
+    async function handleSubmit(e) {
+        e.preventDefault()
         try {
             const res = await axios.get(`https://api.edamam.com/search?q=${search.search}&app_id=${appid}&app_key=${apikey}`)
             setFood(res.data.hits)
@@ -20,13 +21,22 @@ const Search = () => {
         }
     }
 
-    useEffect(() => {
-        getFood()
-    }, [])
+    function handleChange(e) {
+
+        const { name, value } = e.target;
+        setSearch({ [name]: value })
+        console.log(search)
+    }
+
+    // useEffect(() => {
+    //     getFood()
+    // }, [])
 
     return (
         <div>
-            <input type="text" placeholder="search food" />
+            <form onChange={(e) => handleChange(e)} onSubmit={(e) => handleSubmit(e)}>
+                <input type="text" name="search" id="search" placeholder="Search" />
+            </form>
         </div>
     );
 }
