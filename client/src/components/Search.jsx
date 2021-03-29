@@ -28,10 +28,6 @@ const Search = () => {
         console.log(search)
     }
 
-    // useEffect(() => {
-    //     getFood()
-    // }, [])
-
     return (
         <div>
             <form onChange={(e) => handleChange(e)} onSubmit={(e) => handleSubmit(e)}>
