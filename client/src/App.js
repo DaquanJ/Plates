@@ -12,7 +12,7 @@ function App() {
       <Router>
         <Nav />
         <Switch>
-          <Route path='/browse' component={Browse} />
+          <Route path='/' exact component={Browse} />
           <Route path='/cart' component={Cart} />
           <Route path='/search' component={Search} />
 
