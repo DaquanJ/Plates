@@ -4,7 +4,7 @@ import Nav from './components/Nav';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Browse from './components/Browse';
 import Cart from './components/Cart';
-import Search from './components/Search';
+import Searched from './components/Searched';
 
 function App() {
   return (
@@ -14,8 +14,7 @@ function App() {
         <Switch>
           <Route path='/' exact component={Browse} />
           <Route path='/cart' component={Cart} />
-          <Route path='/search' component={Search} />
-
+          <Route path='/search/:search' component={Searched} />
         </Switch>
       </Router>
     </div>
