@@ -16,7 +16,6 @@ const Search = () => {
             const res = await axios.get(`https://api.edamam.com/search?q=${search.search}&app_id=${appid}&app_key=${apikey}`)
             setFood(res.data.hits)
             console.log(res.data.hits)
-            console.log(food)
         } catch (error) {
             console.error(error)
         }
@@ -34,7 +33,6 @@ const Search = () => {
             <form onChange={(e) => handleChange(e)} onSubmit={(e) => handleSubmit(e)}>
                 <Link to={`/search/${search.search}`}>  <input type="text" name="search" id="search" placeholder="What are you craving ?" /> </Link>
             </form>
-
         </div>
     );
 }
