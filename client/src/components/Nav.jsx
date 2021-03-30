@@ -11,7 +11,7 @@ const Nav = () => {
 
             <h2>Plates</h2>
             <ul>
-                <Link to='/browse'> <li>Browse</li> </Link>
+                <Link to='/'> <li>Browse</li> </Link>
                 <Link to='/cart'> <li>Cart</li> </Link>
             </ul>
 
