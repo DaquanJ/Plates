@@ -1,5 +1,6 @@
-import axios from 'axios';
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 const apikey = process.env.REACT_APP_API_KEY;
 const appid = process.env.REACT_APP_API_ID
@@ -27,7 +28,7 @@ const Searched = ({ match }) => {
             {items.map(item =>
                 <div key={item.recipe.label} >
                     <img src={item.recipe.image} alt={item.recipe.label} />
-                    <p> {item.recipe.label} </p>
+                    <Link to={`/plate/${item.recipe.label}`}>  <p> {item.recipe.label} </p> </Link>
                 </div>)}
         </div>
     );
