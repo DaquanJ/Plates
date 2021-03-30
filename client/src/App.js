@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Browse from './components/Browse';
 import Cart from './components/Cart';
 import Searched from './components/Searched';
+import Plate from './components/Plate';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path='/' exact component={Browse} />
           <Route path='/cart' component={Cart} />
           <Route path='/search/:search' component={Searched} />
+          <Route path='/plate/:name' component={Plate} />
         </Switch>
       </Router>
     </div>
