@@ -7,7 +7,7 @@ import Search from './Search';
 const Nav = () => {
     return (
         <div className="navigation" >
-            <Link to='/search'> <Search /> </Link>
+            <Search />
 
             <h2>Plates</h2>
             <ul>
