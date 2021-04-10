@@ -7,14 +7,12 @@ const appid = process.env.REACT_APP_API_ID;
 
 const Search = () => {
 
-    const [food, setFood] = useState([]);
-    const [search, setSearch] = useState({});
+    const [search, setSearch] = useState({ search: '' });
 
     async function handleSubmit(e) {
         e.preventDefault()
         try {
             const res = await axios.get(`https://api.edamam.com/search?q=${search.search}&app_id=${appid}&app_key=${apikey}`)
-            setFood(res.data.hits)
             console.log(res.data.hits)
         } catch (error) {
             console.error(error)
@@ -22,10 +20,8 @@ const Search = () => {
     }
 
     function handleChange(e) {
-
         const { name, value } = e.target;
         setSearch({ [name]: value })
-        console.log(search)
     }
 
     return (
