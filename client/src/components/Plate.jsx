@@ -1,5 +1,6 @@
-import axios from 'axios';
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import numeral from 'numeral'
 
 const apikey = process.env.REACT_APP_API_KEY;
 const appid = process.env.REACT_APP_API_ID;
@@ -29,7 +30,13 @@ const Plate = ({ match }) => {
                 <div>
                     <img src={plate.recipe.image} alt={plate.recipe.label} />
                     <h1> {plate.recipe.label} </h1>
-                    <form action="">
+                    <p> price: ${numeral(plate.recipe.totalDaily.CHOCDF.quantity).format('0.00')} </p>
+                    <p> {plate.recipe.ingredients.map(category => (
+                        <div>
+                            <p> {category.foodCategory} </p>
+                        </div>
+                    ))} </p>
+                    <form >
                         <input type="submit" value="Add To Cart" />
                     </form>
                 </div>
