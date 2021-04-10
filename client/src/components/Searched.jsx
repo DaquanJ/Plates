@@ -26,7 +26,7 @@ const Searched = ({ match }) => {
     return (
         <div>
             {items.map(item =>
-                <div key={item.recipe.label} >
+                <div key={item.recipe.url} >
                     <img src={item.recipe.image} alt={item.recipe.label} />
                     <Link to={`/plate/${item.recipe.label}`}>  <p> {item.recipe.label} </p> </Link>
                 </div>)}
