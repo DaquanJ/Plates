@@ -22,7 +22,7 @@ public class Cart {
     private String description;
 
     @Column
-    private Long price;
+    private Float price;
 
     public Cart() { }
 
@@ -58,11 +58,11 @@ public class Cart {
         this.description = description;
     }
 
-    public Long getPrice() {
+    public Float getPrice() {
         return price;
     }
 
-    public void setPrice(Long price) {
+    public void setPrice(Float price) {
         this.price = price;
     }
 }
