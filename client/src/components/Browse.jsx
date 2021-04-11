@@ -8,9 +8,9 @@ const Browse = () => {
 
     const [browse, setBrowse] = useState([])
 
-    async function getPlates() {
+    async function getPlates(plate) {
         try {
-            const res = await axios.get(`https://api.edamam.com/search?q=food&app_id=${appid}&app_key=${apikey}&to=30`)
+            const res = await axios.get(`https://api.edamam.com/search?q=${plate}&app_id=${appid}&app_key=${apikey}&to=10`)
             setBrowse(res.data.hits)
             console.log(res.data.hits)
         } catch (error) {
@@ -19,7 +19,8 @@ const Browse = () => {
     }
 
     useEffect(() => {
-        getPlates()
+        getPlates('chicken')
+        getPlates('beef')
     }, [])
 
     return (
