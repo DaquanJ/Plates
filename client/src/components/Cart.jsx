@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import numeral from 'numeral';
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
 
@@ -38,7 +39,7 @@ const Cart = () => {
                     <img src={item.image} alt={item.name} />
                     <h1> {item.name} </h1>
                     <p> price: ${numeral(item.price).format('0.00')} </p>
-                    <button> {`Check Out - $${numeral(item.price).format('0.00')} `} </button>
+                    <Link to='/checkout'> <button> {`Check Out - $${numeral(item.price).format('0.00')} `} </button> </Link>
                     <button onClick={() => deleteItem(item.id)} > {`Remove ${item.name}`} </button>
                 </div>
             )}
