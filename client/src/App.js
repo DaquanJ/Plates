@@ -6,6 +6,7 @@ import Browse from './components/Browse';
 import Cart from './components/Cart';
 import Searched from './components/Searched';
 import Plate from './components/Plate';
+import Checkout from './components/Checkout';
 
 function App() {
   return (
@@ -14,9 +15,10 @@ function App() {
         <Nav />
         <Switch>
           <Route path='/' exact component={Browse} />
-          <Route path='/cart' component={Cart} />
           <Route path='/search/:search' component={Searched} />
           <Route path='/plate/:name' component={Plate} />
+          <Route path='/cart' component={Cart} />
+          <Route path='/checkout' component={Checkout} />
         </Switch>
       </Router>
     </div>
