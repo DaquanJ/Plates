@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import '../styles/Nav.css';
@@ -12,7 +12,8 @@ const Nav = () => {
             <h2>Plates</h2>
             <ul>
                 <Link to='/'> <li>Browse</li> </Link>
-                <Link to='/cart'> <li>Cart</li> </Link>
+                <Link to='/cart'> <li>Cart {localStorage.getItem('cartItems')} </li> </Link>
+
             </ul>
 
             <h2>My Plates</h2>
