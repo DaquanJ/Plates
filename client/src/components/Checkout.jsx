@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const Checkout = () => {
 
@@ -33,7 +34,7 @@ const Checkout = () => {
                 <input type="text" id='address' placeholder='Address' />
                 <input type="text" id='city' placeholder='City' />
                 <input type="text" id='phone' placeholder='Phone' />
-                <input type="submit" value='Continue To Payment' />
+                <Link to='/payment' > <input type="submit" value='Continue To Payment' /></Link>
             </form>
         </div>
     );
