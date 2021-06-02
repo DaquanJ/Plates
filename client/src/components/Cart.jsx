@@ -11,7 +11,8 @@ const Cart = () => {
         try {
             const res = await axios.get('http://localhost:8080/cart/')
             setCart(res.data)
-            console.log(res.data)
+            localStorage.setItem('cartItems', res.data.length);
+            console.log(res.data.length)
         } catch (error) {
             console.error(error)
         }
@@ -29,7 +30,7 @@ const Cart = () => {
 
     useEffect(() => {
         getCart()
-    }, [])
+    }, [localStorage.getItem('cartItems')])
 
     return (
         <div>
