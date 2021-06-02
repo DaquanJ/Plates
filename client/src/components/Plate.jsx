@@ -24,6 +24,7 @@ const Plate = ({ match }) => {
         try {
             const newCart = await axios.post('http://localhost:8080/cart/', plate)
             console.log(newCart.data)
+            document.querySelector('#added').innerHTML = 'Your item has been added to the cart !'
         } catch (error) {
             console.error(error)
         }
@@ -49,6 +50,7 @@ const Plate = ({ match }) => {
                     <form onSubmit={(e) => addToCart(e)} >
                         <input type="submit" value="Add To Cart" />
                     </form>
+                    <p id='added' >  </p>
                 </div>
 
             }
