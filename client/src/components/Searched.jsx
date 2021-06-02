@@ -9,7 +9,7 @@ const Searched = ({ match }) => {
 
     const [items, setItems] = useState([])
 
-    async function getItems() {
+    const getItems = async () => {
         try {
             const res = await axios.get(`https://api.edamam.com/search?q=${match.params.search}&app_id=${appid}&app_key=${apikey}&to=30`)
             setItems(res.data.hits)
