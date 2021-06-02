@@ -30,7 +30,7 @@ const Cart = () => {
 
     useEffect(() => {
         getCart()
-    }, [localStorage.getItem('cartItems')])
+    }, [])
 
     return (
         <div>
