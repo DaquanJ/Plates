@@ -7,6 +7,7 @@ import Cart from './components/Cart';
 import Searched from './components/Searched';
 import Plate from './components/Plate';
 import Checkout from './components/Checkout';
+import Payment from './components/Payment';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path='/plate/:name' component={Plate} />
           <Route path='/cart' component={Cart} />
           <Route path='/checkout' component={Checkout} />
+          <Route path='/payment' component={Payment} />
         </Switch>
       </Router>
     </div>
