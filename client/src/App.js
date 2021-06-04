@@ -8,6 +8,7 @@ import Searched from './components/Searched';
 import Plate from './components/Plate';
 import Checkout from './components/Checkout';
 import Payment from './components/Payment';
+import Favorites from './components/Favorites';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path='/cart' component={Cart} />
           <Route path='/checkout' component={Checkout} />
           <Route path='/payment' component={Payment} />
+          <Route path='/favorites' component={Favorites} />
         </Switch>
       </Router>
     </div>
