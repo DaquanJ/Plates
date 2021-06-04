@@ -19,7 +19,7 @@ const Nav = () => {
             <h2>My Plates</h2>
             <ul>
                 <li>All</li>
-                <li>Favorites</li>
+                <Link to='/favorites' > <li>Favorites</li> </Link>
             </ul>
 
         </div>
