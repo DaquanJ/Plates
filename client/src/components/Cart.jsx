@@ -39,6 +39,7 @@ const Cart = () => {
                     <h1> Your Order </h1>
                     <img src={item.image} alt={item.name} />
                     <h1> {item.name} </h1>
+                    <h2> {item.description} </h2>
                     <p> price: ${numeral(item.price).format('0.00')} </p>
                     <Link to='/checkout'> <button> {`Check Out - $${numeral(item.price).format('0.00')} `} </button> </Link>
                     <button onClick={() => deleteItem(item.id)} > {`Remove ${item.name}`} </button>
