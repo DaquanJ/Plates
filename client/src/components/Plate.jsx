@@ -12,7 +12,12 @@ const Plate = ({ match }) => {
     async function getPlate() {
         try {
             const res = await axios.get(`https://api.edamam.com/search?q=${match.params.name}&app_id=${appid}&app_key=${apikey}`)
-            setPlate({ image: res.data.hits[0].recipe.image, name: res.data.hits[0].recipe.label, price: res.data.hits[0].recipe.totalDaily.CHOCDF.quantity, type: res.data.hits[0].recipe.cuisineType })
+            setPlate({
+                image: res.data.hits[0].recipe.image,
+                description: res.data.hits[0].recipe.cuisineType ? res.data.hits[0].recipe.cuisineType[0] : null,
+                name: res.data.hits[0].recipe.label,
+                price: res.data.hits[0].recipe.totalDaily.CHOCDF.quantity
+            })
             console.log(res.data.hits)
         } catch (error) {
             console.error(error)
@@ -52,7 +57,7 @@ const Plate = ({ match }) => {
                 <div>
                     <img src={plate.image} alt={plate.name} />
                     <h1> {plate.name} </h1>
-                    <h2> {plate.type} </h2>
+                    <h2> {plate.description} </h2>
                     <p> price: ${numeral(plate.price).format('0.00')} </p>
                     {/* {plate.ingredients.map(category => (
                         <div key={category.foodId}  >
