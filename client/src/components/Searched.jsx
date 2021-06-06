@@ -11,7 +11,7 @@ const Searched = ({ match }) => {
 
     const getItems = async () => {
         try {
-            const res = await axios.get(`https://api.edamam.com/search?q=${match.params.search}&app_id=${appid}&app_key=${apikey}&to=30`)
+            const res = await axios.get(`https://api.edamam.com/search?q=${match.params.search}&app_id=${appid}&app_key=${apikey}&to=20`)
             setItems(res.data.hits)
             console.log(res.data.hits)
         } catch (error) {
