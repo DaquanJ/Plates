@@ -12,14 +12,15 @@ const Nav = () => {
             <h2>Plates</h2>
             <ul>
                 <Link to='/'> <li>Browse</li> </Link>
-                <Link to='/cart'> <li>Cart {localStorage.getItem('cartItems')} </li> </Link>
+                <Link to='/cart'> <li>Cart {`(${localStorage.getItem('cartItems')})`} </li> </Link>
 
             </ul>
 
             <h2>My Plates</h2>
             <ul>
-                <li>All</li>
-                <Link to='/favorites' > <li>Favorites</li> </Link>
+                <Link to='/favorites' > <li>Favorites {`(${localStorage.getItem('favorites')})`} </li> </Link>
+
+
             </ul>
 
         </div>
