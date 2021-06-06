@@ -34,7 +34,7 @@ const Favorites = () => {
 
     return (
         <div>
-            <h1> Favorites </h1>
+            {favorites.length > 0 ? <h1> Favorites </h1> : null}
             {
                 favorites.map(favorite =>
                     <div key={favorite.id} >
