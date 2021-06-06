@@ -1,14 +1,14 @@
 import './App.css';
-import Nav from './components/Nav';
-
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
+import Nav from './components/Nav';
 import Browse from './components/Browse';
-import Cart from './components/Cart';
 import Searched from './components/Searched';
+import Favorites from './components/Favorites';
 import Plate from './components/Plate';
+import Cart from './components/Cart';
 import Checkout from './components/Checkout';
 import Payment from './components/Payment';
-import Favorites from './components/Favorites';
 
 function App() {
   return (
@@ -18,11 +18,11 @@ function App() {
         <Switch>
           <Route path='/' exact component={Browse} />
           <Route path='/search/:search' component={Searched} />
+          <Route path='/favorites' component={Favorites} />
           <Route path='/plate/:name' component={Plate} />
           <Route path='/cart' component={Cart} />
           <Route path='/checkout' component={Checkout} />
           <Route path='/payment' component={Payment} />
-          <Route path='/favorites' component={Favorites} />
         </Switch>
       </Router>
     </div>
