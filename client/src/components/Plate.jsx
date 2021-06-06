@@ -32,6 +32,7 @@ const Plate = ({ match }) => {
             document.querySelector('#added').innerHTML = 'Your item has been added to the cart !'
         } catch (error) {
             console.error(error)
+            document.querySelector('#added').innerHTML = `Sorry your request failed: ${error}`
         }
     }
     async function addToFavorites(e) {
@@ -42,6 +43,7 @@ const Plate = ({ match }) => {
             document.querySelector('#added').innerHTML = 'Your item has been added to Favorites !'
         } catch (error) {
             console.error(error)
+            document.querySelector('#added').innerHTML = `Sorry your request failed: ${error}`
         }
     }
 
@@ -59,12 +61,6 @@ const Plate = ({ match }) => {
                     <h1> {plate.name} </h1>
                     <h2> {plate.description} </h2>
                     <p> price: ${numeral(plate.price).format('0.00')} </p>
-                    {/* {plate.ingredients.map(category => (
-                        <div key={category.foodId}  >
-                            <p> {category.foodCategory} </p>
-                        </div>
-                    ))} */}
-
                     <button onClick={(e) => addToCart(e)}>Add To Cart</button>
                     <button onClick={(e) => addToFavorites(e)} >Add To Favorites</button>
                     <p id='added' >  </p>
