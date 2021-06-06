@@ -9,7 +9,8 @@ const Favorites = () => {
         try {
             const res = await axios.get('http://localhost:8080/favorites/')
             setFavorites(res.data)
-            console.log(res.data)
+            localStorage.setItem('favorites', res.data.length)
+            console.log(favorites)
         } catch (error) {
             console.error(error)
         }
@@ -32,10 +33,10 @@ const Favorites = () => {
 
     return (
         <div>
-            <h1> Favorites </h1>
             {
                 favorites.map(favorite =>
                     <div>
+                        <h1> Favorites </h1>
                         <h1> {favorite.name} </h1>
                         <img src={favorite.image} alt="dish" />
                         <p> {favorite.description} </p>
