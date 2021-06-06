@@ -29,6 +29,17 @@ const Plate = ({ match }) => {
             console.error(error)
         }
     }
+    async function addToFavorites(e) {
+        e.preventDefault()
+        try {
+            const newFavorite = await axios.post('http://localhost:8080/favorites/', plate)
+            console.log(newFavorite.data)
+            document.querySelector('#added').innerHTML = 'Your item has been added to Favorites !'
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
 
     useEffect(() => {
         getPlate();
@@ -47,9 +58,12 @@ const Plate = ({ match }) => {
                             <p> {category.foodCategory} </p>
                         </div>
                     ))} */}
-                    <form onSubmit={(e) => addToCart(e)} >
-                        <input type="submit" value="Add To Cart" />
-                    </form>
+                    {/* <form  >
+                        <input onSubmit={(e) => addToCart(e)} type="submit" value="Add To Cart" />
+                        <input onSubmit={(e) => addToFavorites(e)} type="submit" value="Add to Favorites" />
+                    </form> */}
+                    <button onClick={(e) => addToCart(e)}>Add To Cart</button>
+                    <button onClick={(e) => addToFavorites(e)} >Add To Favorites</button>
                     <p id='added' >  </p>
                 </div>
 
