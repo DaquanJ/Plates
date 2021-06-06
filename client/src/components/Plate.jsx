@@ -12,8 +12,8 @@ const Plate = ({ match }) => {
     async function getPlate() {
         try {
             const res = await axios.get(`https://api.edamam.com/search?q=${match.params.name}&app_id=${appid}&app_key=${apikey}`)
-            setPlate({ image: res.data.hits[0].recipe.image, name: res.data.hits[0].recipe.label, price: res.data.hits[0].recipe.totalDaily.CHOCDF.quantity })
-            console.log(plate)
+            setPlate({ image: res.data.hits[0].recipe.image, name: res.data.hits[0].recipe.label, price: res.data.hits[0].recipe.totalDaily.CHOCDF.quantity, type: res.data.hits[0].recipe.cuisineType })
+            console.log(res.data.hits)
         } catch (error) {
             console.error(error)
         }
@@ -52,16 +52,14 @@ const Plate = ({ match }) => {
                 <div>
                     <img src={plate.image} alt={plate.name} />
                     <h1> {plate.name} </h1>
+                    <h2> {plate.type} </h2>
                     <p> price: ${numeral(plate.price).format('0.00')} </p>
                     {/* {plate.ingredients.map(category => (
                         <div key={category.foodId}  >
                             <p> {category.foodCategory} </p>
                         </div>
                     ))} */}
-                    {/* <form  >
-                        <input onSubmit={(e) => addToCart(e)} type="submit" value="Add To Cart" />
-                        <input onSubmit={(e) => addToFavorites(e)} type="submit" value="Add to Favorites" />
-                    </form> */}
+
                     <button onClick={(e) => addToCart(e)}>Add To Cart</button>
                     <button onClick={(e) => addToFavorites(e)} >Add To Favorites</button>
                     <p id='added' >  </p>
