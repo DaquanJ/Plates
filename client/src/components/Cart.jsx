@@ -34,7 +34,7 @@ const Cart = () => {
 
     return (
         <div>
-            {cart.length > 0 ? <h1> Your Order </h1> : null}
+            {cart.length > 0 ? <h1> Your Order </h1> : <h1> Your Cart is empty ! </h1>}
             {cart.map(item =>
                 <div key={item.id} >
                     <img src={item.image} alt={item.name} />
