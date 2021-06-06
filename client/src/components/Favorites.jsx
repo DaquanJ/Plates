@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import numeral from 'numeral';
+import { Link } from 'react-router-dom';
 
 const Favorites = () => {
 
@@ -26,20 +28,20 @@ const Favorites = () => {
         }
     }
 
-
     useEffect(() => {
         getFavorites();
     }, [])
 
     return (
         <div>
+            <h1> Favorites </h1>
             {
                 favorites.map(favorite =>
-                    <div>
-                        <h1> Favorites </h1>
-                        <h1> {favorite.name} </h1>
+                    <div key={favorite.id} >
                         <img src={favorite.image} alt="dish" />
+                        <Link to={`/plate/${favorite.name}`} > <h1> {favorite.name} </h1> </Link>
                         <p> {favorite.description} </p>
+                        <p> price: ${numeral(favorite.price).format('0.00')} </p>
                         <button onClick={() => deleteFavorite(favorite.id)} > Remove {favorite.name} </button>
                     </div>
                 )
