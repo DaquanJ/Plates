@@ -1,7 +1,7 @@
 # Food ordering and delivery App
 
 ## Deployed app
-...
+https://daquanj.github.io/plates/
 
 ## which API I'm using
 https://developer.edamam.com/edamam-recipe-api

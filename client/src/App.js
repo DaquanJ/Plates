@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Nav from './components/Nav';
 import Browse from './components/Browse';
@@ -16,7 +16,7 @@ function App() {
       <Router>
         <Nav />
         <Switch>
-          <Route path='/' exact component={Browse} />
+          <Route exact path='/' component={Browse} />
           <Route path='/search/:search' component={Searched} />
           <Route path='/favorites' component={Favorites} />
           <Route path='/plate/:name' component={Plate} />
