@@ -3,14 +3,14 @@
     grid-template-columns: repeat(4, 400px);
     grid-template-rows: auto;
     grid-template-areas:
-        "contact . "
-        "email email"
-        "shipping ."
-        "fName lName"
-        "address address"
-        "city city"
-        "phone phone"
-        ". submit";
+        ". contact . "
+        ". email email"
+        ". shipping ."
+        ". fName lName"
+        ". address address"
+        ". city city"
+        ". phone phone"
+        "back . submit";
     margin-top: 2%;
     padding: 2%;
     max-width: 50%;
@@ -25,7 +25,7 @@
     color: tan;
     font-weight: bold;
     font-style: italic;
-    font-size: small
+    font-size: small;
 }
 
 .checkout_form input:focus {
@@ -79,10 +79,23 @@
     grid-area: phone;
 }
 
-#pay {
+#back-to-cart:hover {
+    cursor: pointer;
+    border-bottom: 1px solid tan;
+    transition: .2s ease-in-out;
+}
+
+#cart-link {
+    grid-area: back;
+    width: 50%;
+}
+
+#pay-link {
     grid-area: submit;
 }
 
 #pay:hover {
     cursor: pointer;
+    border-bottom: 1px solid tan;
+    transition: .2s ease-in-out;
 }

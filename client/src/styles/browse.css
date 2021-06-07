@@ -13,13 +13,27 @@
 
     display: grid;
     grid-template-columns: repeat(4, 25%);
+    row-gap: 2%;
+    column-gap: 4%;
     padding: 2%;
-    left: 10;
 }
 
 /* .plates::-webkit-scrollbar {
     display: none;
 } */
+
+
+#items {
+    display: flex;
+    flex-direction: row;
+    margin-left: 50%;
+    border-radius: 1.5%;
+    box-shadow: .3px .3px 1px .3px darkgray;
+    border-bottom: 3px solid rgba(95, 105, 95, 0.612);
+    padding: 5%;
+    width: 100%;
+}
+
 
 h1 {
     color: rgba(95, 105, 95, 0.612);
@@ -27,6 +41,7 @@ h1 {
     font-style: italic;
     font-size: large;
     margin-top: 2%;
+    margin-left: 15%;
 }
 
 

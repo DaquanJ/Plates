@@ -1,0 +1,62 @@
+.favorites {
+    display: grid;
+    grid-template-columns: 50% 50% 50%;
+    grid-template-areas:
+        "image . ."
+        "image name name"
+        "image price price "
+
+        "image . ."
+        "image . remove-item"
+    ;
+    padding: 2%;
+    width: 33%;
+}
+
+.favorites img {
+    grid-area: image;
+    box-shadow: .3px .3px 10px 2px darkgray;
+    border-radius: 1.5%;
+
+}
+
+#fav-link {
+    grid-area: name;
+    text-decoration: none;
+}
+
+.favorites h2 {
+    grid-area: name;
+    margin-top: 1%;
+    color: rgba(95, 105, 95, 0.612);
+    font-weight: bold;
+    font-style: italic;
+    font-size: xx-large;
+}
+
+.favorites h2:hover {
+    color: tan;
+    transition: .2s ease-in-out;
+}
+
+.favorites h3 {
+    grid-area: description;
+    margin-top: 1%;
+    color: rgba(95, 105, 95, 0.5);
+    font-weight: bold;
+    font-style: italic;
+    font-size: large;
+}
+
+.favorites p {
+    grid-area: price;
+    margin-top: 1%;
+    color: tan;
+    font-weight: bold;
+    font-style: italic;
+    font-size: x-large;
+}
+
+.favorites button:hover {
+    cursor: pointer;
+}

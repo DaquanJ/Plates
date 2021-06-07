@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import numeral from 'numeral'
 
+import '../styles/plate.css';
+
 const apikey = process.env.REACT_APP_API_KEY;
 const appid = process.env.REACT_APP_API_ID;
 
@@ -29,10 +31,10 @@ const Plate = ({ match }) => {
         try {
             const newCart = await axios.post('http://localhost:8080/cart/', plate)
             console.log(newCart.data)
-            document.querySelector('#added').innerHTML = 'Your item has been added to the cart !'
+            document.querySelector('h3').innerHTML = '<h4>Your item has been added to the cart !</h4>'
         } catch (error) {
             console.error(error)
-            document.querySelector('#added').innerHTML = `Sorry your request failed: ${error}`
+            document.querySelector('h3').innerHTML = `Sorry your request failed: ${error}`
         }
     }
     async function addToFavorites(e) {
@@ -40,10 +42,10 @@ const Plate = ({ match }) => {
         try {
             const newFavorite = await axios.post('http://localhost:8080/favorites/', plate)
             console.log(newFavorite.data)
-            document.querySelector('#added').innerHTML = 'Your item has been added to Favorites !'
+            document.querySelector('h3').innerHTML = '<h4>Your item has been added to Favorites !</h4>'
         } catch (error) {
             console.error(error)
-            document.querySelector('#added').innerHTML = `Sorry your request failed: ${error}`
+            document.querySelector('h3').innerHTML = `Sorry your request failed: ${error}`
         }
     }
 
@@ -56,14 +58,14 @@ const Plate = ({ match }) => {
         <div>
             {
                 plate &&
-                <div>
+                <div className='plate' >
                     <img src={plate.image} alt={plate.name} />
-                    <h1> {plate.name} </h1>
-                    <h2> {plate.description} </h2>
+                    <h2> {plate.name} </h2>
                     <p> price: ${numeral(plate.price).format('0.00')} </p>
-                    <button onClick={(e) => addToCart(e)}>Add To Cart</button>
-                    <button onClick={(e) => addToFavorites(e)} >Add To Favorites</button>
-                    <p id='added' >  </p>
+                    <h3> {plate.description} </h3>
+                    <h4 id='added' >  </h4>
+                    <button id='add-to-cart' onClick={(e) => addToCart(e)}>Add To Cart</button>
+                    <button id='add-to-favs' onClick={(e) => addToFavorites(e)} >Add To Favorites</button>
                 </div>
 
             }

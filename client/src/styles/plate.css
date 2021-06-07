@@ -1,0 +1,99 @@
+.plate {
+    display: grid;
+    grid-template-areas:
+        "image . ."
+        "image name name"
+        "image price price "
+        "image description description"
+        "image . ."
+        "image cart favorites"
+    ;
+    padding: 2%;
+    margin-left: 25%;
+    margin-top: 10%;
+}
+
+.plate img {
+    grid-area: image;
+    box-shadow: .3px .3px 10px 2px darkgray;
+    border-radius: 1.5%;
+
+}
+
+.plate h2 {
+    margin-top: 1%;
+    grid-area: name;
+    color: rgba(95, 105, 95, 0.612);
+    font-weight: bold;
+    font-style: italic;
+    font-size: xxx-large;
+}
+
+.plate h3 {
+    grid-area: description;
+    margin-top: 1%;
+    color: rgba(95, 105, 95, 0.5);
+    font-weight: bold;
+    font-style: italic;
+    font-size: large;
+}
+
+.plate p {
+    grid-area: price;
+    margin-top: 1%;
+    color: tan;
+    font-weight: bold;
+    font-style: italic;
+    font-size: x-large;
+}
+
+.plate h4 {
+    grid-area: added;
+    margin-top: 1%;
+    color: rgba(95, 105, 95, 0.5);
+    font-weight: bold;
+    font-style: italic;
+    font-size: large;
+}
+
+.plate button:hover {
+    cursor: pointer;
+}
+
+#add-to-cart:hover {
+    border-bottom: 2px solid tan;
+    transition: .2s ease-in-out;
+}
+
+#add-to-favs:hover {
+    border-bottom: 2px solid tan;
+    transition: .2s ease-in-out;
+}
+
+#add-to-cart {
+    grid-area: cart;
+    border-radius: 1.5%;
+    box-shadow: .3px .1px 1px .3px darkgray;
+    padding: 2%;
+    border: none;
+    background-color: transparent;
+    border-bottom: 2px solid rgba(95, 105, 95, 0.612);
+    color: tan;
+    font-weight: bold;
+    font-style: italic;
+    width: 50%;
+}
+
+#add-to-favs {
+    grid-area: favorites;
+    border-radius: 1.5%;
+    box-shadow: .3px .1px 1px .3px darkgray;
+    padding: 2%;
+    border: none;
+    background-color: transparent;
+    border-bottom: 2px solid rgba(95, 105, 95, 0.612);
+    color: tan;
+    font-weight: bold;
+    font-style: italic;
+    width: 50%;
+}

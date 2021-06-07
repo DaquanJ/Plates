@@ -1,6 +1,8 @@
 .searched_items {
     display: grid;
     grid-template-columns: repeat(4, 25%);
+    row-gap: 2%;
+    column-gap: 4%;
 }
 
 h1 {
@@ -9,6 +11,7 @@ h1 {
     font-style: italic;
     font-size: large;
     margin-top: 2%;
+    margin-bottom: 1%;
 }
 
 #searched-link {

@@ -3,6 +3,8 @@ import axios from 'axios';
 import numeral from 'numeral';
 import { Link } from 'react-router-dom';
 
+import '../styles/favorites.css';
+
 const Favorites = () => {
 
     const [favorites, setFavorites] = useState([]);
@@ -37,12 +39,12 @@ const Favorites = () => {
             {favorites.length > 0 ? <h1> Favorites </h1> : <h1> You haven't added any items to favorites ! </h1>}
             {
                 favorites.map(favorite =>
-                    <div key={favorite.id} >
+                    <div className='favorites' key={favorite.id} >
                         <img src={favorite.image} alt="dish" />
-                        <Link to={`/plate/${favorite.name}`} > <h1> {favorite.name} </h1> </Link>
-                        <p> {favorite.description} </p>
+                        <Link id='fav-link' to={`/plate/${favorite.name}`} > <h2> {favorite.name} </h2> </Link>
                         <p> price: ${numeral(favorite.price).format('0.00')} </p>
-                        <button onClick={() => deleteFavorite(favorite.id)} > Remove {favorite.name} </button>
+                        {/* <h3> {favorite.description} </h3> */}
+                        <button id='remove-item' onClick={() => deleteFavorite(favorite.id)} > Remove {favorite.name} </button>
                     </div>
                 )
             }

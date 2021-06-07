@@ -3,6 +3,8 @@ import axios from 'axios';
 import numeral from 'numeral';
 import { Link } from 'react-router-dom';
 
+import '../styles/cart.css';
+
 const Cart = () => {
 
     const [cart, setCart] = useState([])
@@ -36,15 +38,15 @@ const Cart = () => {
         <div>
             {cart.length > 0 ? <h1> Your Order </h1> : <h1> Your Cart is empty ! </h1>}
             {cart.map(item =>
-                <div key={item.id} >
+                <div className='cart' key={item.id} >
                     <img src={item.image} alt={item.name} />
-                    <h1> {item.name} </h1>
-                    <h2> {item.description} </h2>
+                    <h2> {item.name} </h2>
                     <p> price: ${numeral(item.price).format('0.00')} </p>
-                    <Link to='/checkout'> <button> {`Check Out - $${numeral(item.price).format('0.00')} `} </button> </Link>
-                    <button onClick={() => deleteItem(item.id)} > {`Remove ${item.name}`} </button>
+                    <h3> {item.description} </h3>
+                    <button id='remove-item' onClick={() => deleteItem(item.id)} > {`Remove ${item.name}`} </button>
                 </div>
             )}
+            { cart.length > 0 ? <Link id='checkout' to='/checkout'> <button id='checkout-item' > {`Check Out  `} </button> </Link> : null}
         </div>
     );
 }

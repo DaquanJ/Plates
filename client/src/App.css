@@ -8,7 +8,7 @@
 }
 
 body {
-  width: 100%;
+  width: 95%;
   margin-top: auto;
 }
 
@@ -16,5 +16,11 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  /* margin-top: 1.5%; */
+  margin-top: 1.5%;
+}
+
+@media (min-width: 1400px) {
+  * {
+    width: 90%;
+  }
 }

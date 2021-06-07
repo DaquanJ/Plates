@@ -64,4 +64,6 @@
 
 #pay_now:hover {
     cursor: pointer;
+    border-bottom: 1px solid tan;
+    transition: .2s ease-in-out;
 }

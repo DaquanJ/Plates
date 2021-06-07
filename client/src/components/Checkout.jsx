@@ -38,7 +38,8 @@ const Checkout = () => {
                 <input type="text" id='address' placeholder='Address' />
                 <input type="text" id='city' placeholder='City' />
                 <input type="text" id='phone' placeholder='Phone' />
-                <Link id='pay' to='/payment' > <input id='pay' type="submit" value='Continue To Payment' /></Link>
+                <Link id='cart-link' to='/cart' > <input type="button" id='back-to-cart' value='< Back to Cart' /></Link>
+                <Link id='pay-link' to='/payment' > <input id='pay' type="submit" value='Continue To Payment' /></Link>
             </form>
         </div>
     );

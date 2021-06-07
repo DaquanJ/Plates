@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-
+import numeral from 'numeral';
 import '../styles/searched.css';
 
 const apikey = process.env.REACT_APP_API_KEY;
@@ -32,7 +32,7 @@ const Searched = ({ match }) => {
                 {items.map(item =>
                     <div id='items' key={item.recipe.url} >
                         <img src={item.recipe.image} alt={item.recipe.label} />
-                        <Link id='searched-link' to={`/plate/${item.recipe.label}`}>  <p> {item.recipe.label} </p> </Link>
+                        <Link id='searched-link' to={`/plate/${item.recipe.label}`}>  <p> {item.recipe.label} <br /> price: ${numeral(item.recipe.totalDaily.CHOCDF.quantity).format('0.00')} </p> </Link>
                     </div>)}
             </div>
         </div>
