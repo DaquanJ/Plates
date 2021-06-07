@@ -1,6 +1,7 @@
 .navigation {
     border-right: 2px solid rgba(95, 105, 95, 0.612);
-    width: 15%;
+    width: 7%;
+    height: 85%;
     padding: 2%;
     position: fixed;
     left: 0;
@@ -37,8 +38,8 @@
 
 #search {
     margin-bottom: 15%;
-    /* width: auto; */
-    padding: 5%;
+    width: 110%;
+    padding: 7%;
     border: transparent;
     background-color: transparent;
     border-bottom: 1px solid rgba(95, 105, 95, 0.612);

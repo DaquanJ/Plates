@@ -43,7 +43,6 @@ const Favorites = () => {
                         <img src={favorite.image} alt="dish" />
                         <Link id='fav-link' to={`/plate/${favorite.name}`} > <h2> {favorite.name} </h2> </Link>
                         <p> price: ${numeral(favorite.price).format('0.00')} </p>
-                        {/* <h3> {favorite.description} </h3> */}
                         <button id='remove-item' onClick={() => deleteFavorite(favorite.id)} > Remove {favorite.name} </button>
                     </div>
                 )
