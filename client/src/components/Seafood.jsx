@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
+import '../styles/browse.css';
+
 const apikey = process.env.REACT_APP_API_KEY;
 const appid = process.env.REACT_APP_API_ID;
 
@@ -27,11 +29,13 @@ const Seafood = () => {
     return (
         <div>
             <h1> Seafood </h1>
-            {food.map(item =>
-                <div key={item.recipe.url} >
-                    <img src={item.recipe.image} alt={item.recipe.label} />
-                    <Link to={`/plate/${item.recipe.label}`}>  <p> {item.recipe.label} </p> </Link>
-                </div>)}
+            <div className='plates' >
+                {food.map(item =>
+                    <div id='items' key={item.recipe.url} >
+                        <img src={item.recipe.image} alt={item.recipe.label} />
+                        <Link id='browse-link' to={`/plate/${item.recipe.label}`}>  <p> {item.recipe.label} </p> </Link>
+                    </div>)}
+            </div>
         </div>
     );
 }

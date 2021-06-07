@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+
+import '../styles/payment.css';
 
 const Payment = () => {
 
@@ -12,7 +14,7 @@ const Payment = () => {
 
     async function submitPayment(e) {
         e.preventDefault();
-        document.querySelector('#pay-form').innerHTML = '<h1>Thank you for your purchase !</h1>'
+        document.querySelector('.pay-form').innerHTML = '<h1>Thank you for your purchase !</h1>'
     }
 
 
@@ -21,12 +23,13 @@ const Payment = () => {
         <div>
 
 
-            <form id='pay-form' onSubmit={(e) => submitPayment(e)} onChange={(e) => handleChange(e)}>
+            <form className='pay-form' onSubmit={(e) => submitPayment(e)} onChange={(e) => handleChange(e)}>
+                <h2 id='info'> Card Info </h2>
                 <input type="text" id='cardNumber' placeholder='Card Number' />
                 <input type="text" id='cardName' placeholder='Name on card' />
-                <input type="text" id='cardExp' placeholder='Expiration dat (MM / YY)' />
+                <input type="text" id='cardExp' placeholder='Expiration date (MM / YY)' />
                 <input type="text" id='secCode' placeholder='Security code' />
-                <input type="submit" value='Pay Now' />
+                <input type="submit" id='pay_now' value='Pay Now' />
             </form>
 
         </div>

@@ -1,0 +1,67 @@
+.pay-form {
+    display: grid;
+    grid-template-columns: repeat(4, 400px);
+    grid-template-rows: auto;
+    grid-template-areas:
+        "info . "
+        "cardNum cardNum"
+        "name name"
+        "exp csv"
+        ". submit";
+    margin-top: 2%;
+    padding: 2%;
+    max-width: 50%;
+}
+
+.pay-form input {
+    margin: 2%;
+    padding: 2%;
+    border: none;
+    border-bottom: 1px solid rgba(95, 105, 95, 0.612);
+    background-color: transparent;
+    color: tan;
+    font-weight: bold;
+    font-style: italic;
+    font-size: small
+}
+
+.pay-form input:focus {
+    outline: none;
+    border-bottom: 2px solid tan;
+    transition: .2s ease-in-out;
+}
+
+
+#info {
+    grid-area: info;
+
+    color: rgba(95, 105, 95, 0.612);
+    font-weight: bold;
+    font-style: italic;
+    font-size: large;
+    margin-top: 2%;
+}
+
+#cardNumber {
+    grid-area: cardNum;
+}
+
+#cardName {
+    grid-area: name;
+}
+
+#cardExp {
+    grid-area: exp;
+}
+
+#secCode {
+    grid-area: csv;
+}
+
+#pay_now {
+    grid-area: submit;
+}
+
+#pay_now:hover {
+    cursor: pointer;
+}

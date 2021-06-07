@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-
 import '../styles/Nav.css';
+import { Link } from 'react-router-dom';
 import Search from './Search';
 
 const Nav = () => {
@@ -11,14 +9,14 @@ const Nav = () => {
 
             <h2>Plates</h2>
             <ul>
-                <Link to='/'> <li>Browse</li> </Link>
-                <Link to='/cart'> <li>Cart {`(${localStorage.getItem('cartItems')})`} </li> </Link>
+                <Link id='nav-link' to='/'> <li>Browse</li> </Link>
+                <Link id='nav-link' to='/cart'> <li>Cart {`(${localStorage.getItem('cartItems')})`} </li> </Link>
 
             </ul>
 
             <h2>My Plates</h2>
             <ul>
-                <Link to='/favorites' > <li>Favorites {`(${localStorage.getItem('favorites')})`} </li> </Link>
+                <Link id='nav-link' to='/favorites' > <li>Favorites {`(${localStorage.getItem('favorites')})`} </li> </Link>
 
 
             </ul>

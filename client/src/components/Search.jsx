@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
+import '../styles/Nav.css';
+
 const apikey = process.env.REACT_APP_API_KEY;
 const appid = process.env.REACT_APP_API_ID;
 

@@ -1,0 +1,42 @@
+.plates {
+    /* display: grid;
+    grid-template-columns: repeat(10, 20%);
+    max-width: 1000px;
+    max-height: 225px;
+    overflow-x: auto;
+    overflow-y: hidden; */
+
+    /* -ms-overflow-style: none;
+    /* IE and Edge */
+    /* scrollbar-width: none; */
+    /* Firefox */
+
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    padding: 2%;
+    left: 10;
+}
+
+/* .plates::-webkit-scrollbar {
+    display: none;
+} */
+
+h1 {
+    color: rgba(95, 105, 95, 0.612);
+    font-weight: bold;
+    font-style: italic;
+    font-size: large;
+    margin-top: 2%;
+}
+
+
+#browse-link {
+    text-decoration: none;
+    color: rgba(95, 105, 95, 0.612);
+    font-weight: bold;
+}
+
+#browse-link:hover {
+    color: tan;
+    transition: all .2s ease-in-out;
+}
