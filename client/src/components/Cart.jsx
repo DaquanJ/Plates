@@ -14,7 +14,7 @@ const Cart = () => {
             const res = await axios.get('https://e-plates.herokuapp.com/cart/')
             setCart(res.data)
             localStorage.setItem('cartItems', res.data.length);
-            console.log(res.data.length)
+            // console.log(res.data.length)
         } catch (error) {
             console.error(error)
         }

@@ -15,7 +15,7 @@ const Search = () => {
         e.preventDefault()
         try {
             const res = await axios.get(`https://api.edamam.com/search?q=${search.search}&app_id=${appid}&app_key=${apikey}`)
-            console.log(res.data.hits)
+            // console.log(res.data.hits)
         } catch (error) {
             console.error(error)
         }

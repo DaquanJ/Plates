@@ -11,14 +11,14 @@ const Checkout = () => {
     function handleChange(e) {
         const { id, value } = e.target;
         setCheckout({ ...checkout, [id]: value })
-        console.log(checkout)
+        // console.log(checkout)
     }
 
     async function submitCheckout(e) {
         e.preventDefault();
         try {
             const res = await axios.post('https://e-plates.herokuapp.com/checkout', checkout)
-            console.log(res.data)
+            // console.log(res.data)
         } catch (error) {
             console.error(error)
         }

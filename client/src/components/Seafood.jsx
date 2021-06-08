@@ -15,7 +15,7 @@ const Seafood = () => {
         try {
             const res = await axios.get(`https://api.edamam.com/search?q=seafood&app_id=${appid}&app_key=${apikey}&to=10`)
             setFood(res.data.hits);
-            console.log(res.data.hits);
+            // console.log(res.data.hits);
         } catch (error) {
             console.error(error)
         }

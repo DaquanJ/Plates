@@ -14,7 +14,7 @@ const Favorites = () => {
             const res = await axios.get('https://e-plates.herokuapp.com/favorites/')
             setFavorites(res.data)
             localStorage.setItem('favorites', res.data.length)
-            console.log(favorites)
+            // console.log(favorites)
         } catch (error) {
             console.error(error)
         }

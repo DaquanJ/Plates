@@ -20,7 +20,7 @@ const Plate = ({ match }) => {
                 name: res.data.hits[0].recipe.label,
                 price: res.data.hits[0].recipe.totalDaily.CHOCDF.quantity
             })
-            console.log(res.data.hits)
+            // console.log(res.data.hits)
         } catch (error) {
             console.error(error)
         }
