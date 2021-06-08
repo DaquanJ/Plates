@@ -17,7 +17,7 @@ const Checkout = () => {
     async function submitCheckout(e) {
         e.preventDefault();
         try {
-            const res = await axios.post('http://localhost:8080/checkout', checkout)
+            const res = await axios.post('https://e-plates.herokuapp.com/checkout', checkout)
             console.log(res.data)
         } catch (error) {
             console.error(error)

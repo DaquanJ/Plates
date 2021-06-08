@@ -11,7 +11,7 @@ const Cart = () => {
 
     async function getCart() {
         try {
-            const res = await axios.get('http://localhost:8080/cart/')
+            const res = await axios.get('https://e-plates.herokuapp.com/cart/')
             setCart(res.data)
             localStorage.setItem('cartItems', res.data.length);
             console.log(res.data.length)
@@ -22,7 +22,7 @@ const Cart = () => {
 
     async function deleteItem(id) {
         try {
-            const res = await axios.delete(`http://localhost:8080/cart/${id}`)
+            const res = await axios.delete(`https://e-plates.herokuapp.com/cart/${id}`)
             setCart([...cart].filter(cart => cart.id !== id))
             console.log(res.data)
         } catch (error) {

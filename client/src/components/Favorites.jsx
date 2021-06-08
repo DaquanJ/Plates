@@ -11,7 +11,7 @@ const Favorites = () => {
 
     const getFavorites = async () => {
         try {
-            const res = await axios.get('http://localhost:8080/favorites/')
+            const res = await axios.get('https://e-plates.herokuapp.com/favorites/')
             setFavorites(res.data)
             localStorage.setItem('favorites', res.data.length)
             console.log(favorites)
@@ -22,7 +22,7 @@ const Favorites = () => {
 
     const deleteFavorite = async (id) => {
         try {
-            const res = await axios.delete(`http://localhost:8080/favorites/${id}`)
+            const res = await axios.delete(`https://e-plates.herokuapp.com/favorites/${id}`)
             setFavorites([...favorites].filter(item => item.id !== id))
             console.log(res.data)
         } catch (error) {

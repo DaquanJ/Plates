@@ -29,7 +29,7 @@ const Plate = ({ match }) => {
     async function addToCart(e) {
         e.preventDefault()
         try {
-            const newCart = await axios.post('http://localhost:8080/cart/', plate)
+            const newCart = await axios.post('https://e-plates.herokuapp.com/cart/', plate)
             console.log(newCart.data)
             document.querySelector('h3').innerHTML = '<h4>Your item has been added to the cart !</h4>'
         } catch (error) {
@@ -40,7 +40,7 @@ const Plate = ({ match }) => {
     async function addToFavorites(e) {
         e.preventDefault()
         try {
-            const newFavorite = await axios.post('http://localhost:8080/favorites/', plate)
+            const newFavorite = await axios.post('https://e-plates.herokuapp.com/favorites/', plate)
             console.log(newFavorite.data)
             document.querySelector('h3').innerHTML = '<h4>Your item has been added to Favorites !</h4>'
         } catch (error) {
