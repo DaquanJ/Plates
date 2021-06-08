@@ -29,7 +29,7 @@ const Search = () => {
     return (
         <div>
             <form onChange={(e) => handleChange(e)} onSubmit={(e) => handleSubmit(e)}>
-                <Link to={`/search/${search.search}`}>  <input type="text" name="search" id="search" placeholder="What are you craving ?" /> </Link>
+                <Link to={`/search/${search.search}`}>  <input type="text" name="search" id="search" placeholder="Search Dishes" /> </Link>
             </form>
         </div>
     );
